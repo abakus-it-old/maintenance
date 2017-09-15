@@ -9,13 +9,17 @@
                 <div class="page">
                     <div class="oe_structure" />
 
+                    <div>
+                        <span t-field="doc.name" />
+                    </div>
+
                     <table style="width:100%; font-size:0.8em; margin-bottom:2em;">
 
                         <tr>
-                            <td>User Name</td>
-                            <td>Groups</td>
-                            <td>Shares</td>
-                            <td>Rights</td>
+                            <th>User Name</th>
+                            <th>Groups</th>
+                            <th>Shares</th>
+                            <th>Rights</th>
                         </tr>
 
                         <tr t-foreach="doc.external_access_ids" t-as="line">
