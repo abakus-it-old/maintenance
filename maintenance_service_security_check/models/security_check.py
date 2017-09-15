@@ -48,4 +48,4 @@ class SecurityCheck(models.Model):
 
     @api.multi
     def print_access_rights(self):
-        return self.env['report'].get_action(self, 'report_access_rights_template')
+        return self.env['report'].get_action(self, 'maintenance_service_security_check.report_access_rights_template')

@@ -6,8 +6,8 @@
             string="Security Check Access Rights Report"
             model="security.check" 
             report_type="qweb-pdf"
-            file="report_access_rights"
-            name="report_access_rights_template"
+            file="maintenance_service_security_check.report_access_rights"
+            name="maintenance_service_security_check.report_access_rights_template"
         />
     </data>
 </odoo>
