@@ -5,7 +5,7 @@
 
             <t t-set="doc" t-value="doc.with_context({'lang':user.partner_id.lang})" />
 
-            <t t-call="security_check_layout">
+            <t t-call="maintenance_service_security_check.security_check_layout">
                 <div class="page">
                     <div class="oe_structure" />
 
