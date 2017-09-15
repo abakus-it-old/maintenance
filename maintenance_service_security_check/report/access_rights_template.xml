@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="access_rights_domument">
+
+            <t t-set="doc" t-value="doc.with_context({'lang':user.partner_id.lang})" />
+
+            <t t-call="security_check_layout">
+                <div class="page">
+                    <div class="oe_structure" />
+
+                    <table style="width:100%; font-size:0.8em; margin-bottom:2em;">
+
+                        <tr>
+                            <td>User Name</td>
+                            <td>Groups</td>
+                            <td>Shares</td>
+                            <td>Rights</td>
+                        </tr>
+
+                        <tr t-foreach="doc.external_access_ids" t-as="line">
+                            <td>
+                                <span t-field="line.username" />
+                            </td>
+                            <td>
+                                <span t-field="line.groups" />
+                            </td>
+                            <td>
+                                <span t-field="line.shares" />
+                            </td>
+                            <td>
+                                <span t-field="line.rights" />
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="oe_structure"/>
+                </div>
+            </t>
+        </template>
+
+
+        <template id="report_access_rights_template">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="access_rights_document" t-lang="user.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

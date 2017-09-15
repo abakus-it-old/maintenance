@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="action_security_checks" model="ir.actions.act_window">
+            <field name="name">Security Checks</field>
+            <field name="res_model">security.check</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Security Checks"
+            id="menu_security_checks_root"
+            action="action_security_checks" />
+
+        <!-- <record id="action_reservation" model="ir.actions.act_window">
+            <field name="name">Reservations</field>
+            <field name="res_model">fleet.reservation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">calendar,tree,form</field>
+        </record>
+
+        <menuitem name="Reservations"
+            id="menu_reservation" parent="menu_reservation_root"
+            sequence="5" action="action_reservation" />
+
+        <record id="action_reservation_type" model="ir.actions.act_window">
+            <field name="name">Reservation Types</field>
+            <field name="res_model">fleet.reservation.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Reservation Types"
+            id="menu_reservation_type" parent="menu_reservation_root"
+            sequence="20" action="action_reservation_type" />
+
+        <record id="action_reservation_wizard" model="ir.actions.act_window">
+            <field name="name">Reservation Generator</field>
+            <field name="res_model">fleet.reservation.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem name="Reservation Generator"
+            id="menu_reservation_wizard" parent="menu_reservation_root"
+            sequence="50" action="action_reservation_wizard" /> -->
+    </data>
+</openerp>

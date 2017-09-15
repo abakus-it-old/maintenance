@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            id="report_access_rights"
+            string="Security Check Access Rights Report"
+            model="security.check" 
+            report_type="qweb-pdf"
+            file="report_access_rights"
+            name="report_access_rights_template"
+        />
+    </data>
+</odoo>
