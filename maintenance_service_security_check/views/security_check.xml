@@ -18,7 +18,7 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="name" />
+                                <field name="name" readonly="1" />
                                 <field name="write_uid" readonly="1" />
                                 <field name="partner_id" />
                             </group>
