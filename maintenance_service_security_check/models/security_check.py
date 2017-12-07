@@ -18,8 +18,8 @@ class SecurityCheck(models.Model):
         ('closed', 'Closed'),
         ('cancel', 'Cancelled'),
     ], string='State', default='draft', required=True, track_visibility='always')
-    date_end = fields.Date(string='End Date', required=True, readonly=True, states={'draft': [('readonly', False)], 'open': [('readonly', False)]})
-    partner_id = fields.Many2one('res.partner', string='Customer', required=True, readonly=True, states={'draft': [('readonly', False)], 'open': [('readonly', False)]})
+    date_end = fields.Date(string='End Date', required=True, readonly=True, states={'draft': [('readonly', False)]})
+    partner_id = fields.Many2one('res.partner', string='Customer', required=True, readonly=True, states={'draft': [('readonly', False)]})
 
     external_access_ids = fields.One2many('security.check.external.access', 'check_id', string="External Accesses", readonly=True, states={'open': [('readonly', False)]})
     external_access_attachment_ids = fields.Many2many('ir.attachment', string='Signed Report')
@@ -60,6 +60,10 @@ class SecurityCheck(models.Model):
     @api.multi
     def action_validate(self):
         self.state = 'closed'
+
+    @api.multi
+    def action_refuse(self):
+        self.state = 'open'
 
     @api.multi
     def action_cancel(self):

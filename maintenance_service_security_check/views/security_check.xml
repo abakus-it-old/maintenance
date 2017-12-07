@@ -11,6 +11,7 @@
                         <button name="action_confirm" states="draft" string="Mark as Todo" type="object" class="oe_highlight"/>
                         <button name="action_done" states="open" string="Mark as Done" type="object" class="oe_highlight"/>
                         <button name="action_validate" states="waiting" string="Validate" type="object" class="oe_highlight"/>
+                        <button name="action_refuse" states="waiting" string="Refuse" type="object" class="oe_highlight"/>
                         <button name="action_cancel" string="Cancel" type="object" states="draft,open,waiting,closed"/>
                         <button name="action_redraft" states="cancel" string="Reset as draft" type="object" />
                         <field name="state" widget="statusbar" statusbar_visible="draft,open,waiting,closed" />
