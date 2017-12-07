@@ -12,9 +12,12 @@ class SecurityCheck(models.Model):
 
     name = fields.Char(string='Description', index=True, required=True, readonly=True, states={'running': [('readonly', False)]}, track_visibility='always')
     state = fields.Selection([
-        ('running', 'Running'),
-        ('closed', 'Closed')
-    ], string='State', default='running', required=True, track_visibility='always')
+        ('draft', 'Draft'),
+        ('open', 'Open'),
+        ('waiting', 'Waiting validation'),
+        ('closed', 'Closed'),
+        ('cancel', 'Cancelled'),
+    ], string='State', default='draft', required=True, track_visibility='always')
     date_end = fields.Date(string='End Date', required=True, readonly=True, states={'running': [('readonly', False)]})
     partner_id = fields.Many2one('res.partner', string='Customer', required=True, readonly=True, states={'running': [('readonly', False)]})
 
@@ -46,6 +49,26 @@ class SecurityCheck(models.Model):
     workstation_security_attachment_ids = fields.Many2many('ir.attachment', string='Signed Report')
     workstation_security_check_date = fields.Date(string='Check Date')
 
+    @api.multi
+    def action_confirm(self):
+        self.state = 'open'
+
+    @api.multi
+    def action_done(self):
+        self.state = 'waiting'
+
+    @api.multi
+    def action_validate(self):
+        self.state = 'closed'
+
+    @api.multi
+    def action_cancel(self):
+        self.state = 'cancel'
+
+    @api.multi
+    def action_redraft(self):
+        self.state = 'draft'
+    
     @api.multi
     def print_access_rights(self):
         return self.env['report'].get_action(self, 'maintenance_service_security_check.report_access_rights_template')
