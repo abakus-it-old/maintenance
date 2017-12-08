@@ -10,7 +10,26 @@
                     <div class="oe_structure" />
 
                     <div>
-                        <span t-field="doc.name" />
+                        <tr>
+                            <td>Author:</td>
+                            <td><span t-field="doc.write_uid" /></td>
+                        </tr>
+                    </div>
+                    <div>
+                        <td>Creation date:</td>
+                        <td><span t-field="doc.create_date" /></td>
+                    </div>
+                    <div>
+                        <td>Expiration date:</td>
+                        <td><span t-field="doc.date_end" /></td>
+                    </div>
+                    <div>
+                        <td>State:</td>
+                        <td><span t-field="doc.state" /></td>
+                    </div>
+                    <div>
+                        <td>Client:</td>
+                        <td><span t-field="doc.partner_id" /></td>
                     </div>
 
                     <table style="width:100%; font-size:0.8em; margin-bottom:2em;">
@@ -22,7 +41,7 @@
                             <th>Rights</th>
                         </tr>
 
-                        <tr t-foreach="doc.external_access_ids" t-as="line">
+                        <tr t-foreach="doc.access_rights_ids" t-as="line">
                             <td>
                                 <span t-field="line.username" />
                             </td>

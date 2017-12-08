@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="backups_document">
+
+            <t t-set="doc" t-value="doc.with_context({'lang':user.partner_id.lang})" />
+
+            <t t-call="maintenance_service_security_check.security_check_layout">
+                <div class="page">
+                    <div class="oe_structure" />
+
+                    <div>
+                        <tr>
+                            <td>Author:</td>
+                            <td><span t-field="doc.write_uid" /></td>
+                        </tr>
+                    </div>
+                    <div>
+                        <td>Creation date:</td>
+                        <td><span t-field="doc.create_date" /></td>
+                    </div>
+                    <div>
+                        <td>Expiration date:</td>
+                        <td><span t-field="doc.date_end" /></td>
+                    </div>
+                    <div>
+                        <td>State:</td>
+                        <td><span t-field="doc.state" /></td>
+                    </div>
+                    <div>
+                        <td>Client:</td>
+                        <td><span t-field="doc.partner_id" /></td>
+                    </div>
+
+                    <table style="width:100%; font-size:0.8em; margin-bottom:2em;">
+
+                        <tr>
+                            <th>Source</th>
+                            <th>Destination</th>
+                            <th>Frequency</th>
+                            <th>Date Last Successful Restore</th>
+                            <th>Report Monitoring</th>
+                        </tr>
+
+                        <tr t-foreach="doc.backups_ids" t-as="line">
+                            <td>
+                                <span t-field="line.source" />
+                            </td>
+                            <td>
+                                <span t-field="line.destination" />
+                            </td>
+                            <td>
+                                <span t-field="line.frequency" />
+                            </td>
+                            <td>
+                                <span t-field="line.date_last_successful_restore" />
+                            </td>
+                            <td>
+                                <span t-field="line.report_monitoring" />
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div>
+                        <td>Validation Date:</td>
+                        <td>Signature:</td>
+                    </div>
+
+
+                    <div class="oe_structure"/>
+                </div>
+            </t>
+        </template>
+
+
+        <template id="report_backups_template">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="maintenance_service_security_check.backups_document" t-lang="user.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

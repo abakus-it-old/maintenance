@@ -19,8 +19,14 @@
         'views/security_check.xml',
         # 'security/ir.model.access.csv',
 
-        'report/layout.xml',
+        'report/layouts.xml',
+        'report/external_access_template.xml',
+        'report/backups_template.xml',
         'report/access_rights_template.xml',
+        'report/gate_access_template.xml',
+        'report/servers_security_template.xml',
+        'report/network_security_template.xml',
+        'report/workstations_security_template.xml',
         'report/reports.xml',
     ],
     'application': True
