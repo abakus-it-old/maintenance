@@ -100,6 +100,7 @@
                                 <tree editable="bottom">
                                     <field name="server" />
                                     <field name="hardware_ok" />
+                                    <field name="maintenance" />
                                     <field name="shadow_copies" />
                                     <field name="resources_ok" />
                                     <field name="irmc_ok" />

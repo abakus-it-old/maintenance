@@ -17,8 +17,8 @@
     'data': [
         'views/menu_buttons.xml',
         'views/security_check.xml',
-        # 'security/ir.model.access.csv',
-
+        'security/security_check_security.xml',
+        'security/ir.model.access.csv',
         'report/layouts.xml',
         'report/external_access_template.xml',
         'report/backups_template.xml',

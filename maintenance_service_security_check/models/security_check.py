@@ -5,10 +5,10 @@ from openerp import models, fields, api, exceptions, _
 import logging
 _logger = logging.getLogger(__name__)
 
+
 class SecurityCheck(models.Model):
     _name = 'security.check'
     _order = 'date_end'
-    # _inherit = 'mail.thread'
 
     name = fields.Char(string='Titre', index=True, required=True, track_visibility='always', compute='_compute_name')
     state = fields.Selection([
