@@ -30,29 +30,27 @@
                             </group>
                         </group>
                         <group string="External Accesses">
-                            <group>
-                                <field name="external_access_attachment_ids" widget="many2many_binary" />
-                            </group>
-                            <group>
+                            <group colspan="4" col="5">>
+                                <button string="Create Report" class="btn-primary" type="object" name="print_external_access" colspan="1" />
+                                <field name="external_access_attachment_ids" widget="many2many_binary" nolabel="1" colspan="1" />
                                 <field name="external_access_check_date" />
                             </group>
                             <field name="external_access_ids" nolabel="1" colspan="4">
                                 <tree editable="bottom">
                                     <field name="username" />
-                                    <field name="firstname" />
-                                    <field name="lastname" />
+                                    <field name="first_name" />
+                                    <field name="last_name" />
                                     <field name="connection_mode" />
                                 </tree>
                             </field>
                         </group>
                         <group string="Backups">
-                            <group>
-                                <field name="backup_attachment_ids" widget="many2many_binary" />
+                            <group colspan="4" col="5">>
+                                <button string="Create Report" class="btn-primary" type="object" name="print_backups" colspan="1" />
+                                <field name="backups_attachment_ids" widget="many2many_binary" nolabel="1" colspan="1" />
+                                <field name="backups_check_date" />
                             </group>
-                            <group>
-                                <field name="backup_check_date" />
-                            </group>
-                            <field name="backup_ids" nolabel="1" colspan="4">
+                            <field name="backups_ids" nolabel="1" colspan="4">
                                 <tree editable="bottom">
                                     <field name="source" />
                                     <field name="destination" />
@@ -77,11 +75,10 @@
                                 </tree>
                             </field>
                         </group>
-                        <group string="Gate Accesses">
-                            <group>
-                                <field name="gate_access_attachment_ids" widget="many2many_binary" />
-                            </group>
-                            <group>
+                        <group string="Portal Accesses">
+                            <group colspan="4" col="5">
+                                <button string="Create Report" class="btn-primary" type="object" name="print_gate_access" colspan="1" />
+                                <field name="gate_access_attachment_ids" widget="many2many_binary" nolabel="1" colspan="1" />
                                 <field name="gate_access_check_date" />
                             </group>
                             <field name="gate_access_ids" nolabel="1" colspan="4">
@@ -95,16 +92,16 @@
                             </field>
                         </group>
                         <group string="Servers Security">
-                            <group>
-                                <field name="server_security_attachment_ids" widget="many2many_binary" />
-                            </group>
-                            <group>
+                            <group colspan="4" col="6">
+                                <button string="Create Report" class="btn-primary" type="object" name="print_server_security" colspan="1" />
+                                <field name="server_security_attachment_ids" widget="many2many_binary"  nolabel="1" colspan="1" />
                                 <field name="server_security_check_date" />
                             </group>
                             <field name="server_security_ids" nolabel="1" colspan="4">
                                 <tree editable="bottom">
                                     <field name="server" />
                                     <field name="hardware_ok" />
+                                    <field name="maintenance" />
                                     <field name="shadow_copies" />
                                     <field name="resources_ok" />
                                     <field name="irmc_ok" />
@@ -113,10 +110,9 @@
                             </field>
                         </group>
                         <group string="Network Security">
-                            <group>
-                                <field name="network_security_attachment_ids" widget="many2many_binary" />
-                            </group>
-                            <group>
+                            <group colspan="4" col="5">
+                                <button string="Create Report" class="btn-primary" type="object" name="print_network_security" colspan="1" />
+                                <field name="network_security_attachment_ids" widget="many2many_binary" nolabel="1" colspan="1" />
                                 <field name="network_security_check_date" />
                             </group>
                             <field name="network_security_ids" nolabel="1" colspan="4">
@@ -130,10 +126,9 @@
                             </field>
                         </group>
                         <group string="Workstations Security">
-                            <group>
-                                <field name="workstation_security_attachment_ids" widget="many2many_binary" />
-                            </group>
-                            <group>
+                            <group colspan="4" col="2">
+                                <button string="Create Report" class="btn-primary" type="object" name="print_workstation_security" colspan="1" />
+                                <field name="workstation_security_attachment_ids" widget="many2many_binary"  nolabel="1" colspan="1" />
                                 <field name="workstation_security_check_date" />
                             </group>
                             <field name="workstation_security_ids" nolabel="1" colspan="4">
@@ -144,10 +139,10 @@
                             </field>
                         </group>
                     </sheet>
-                    <!-- <div class="oe_chatter">
+                    <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"/>
                         <field name="message_ids" widget="mail_thread"/>
-                    </div> -->
+                    </div>
                 </form>
             </field>
         </record>

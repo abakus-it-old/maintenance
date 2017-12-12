@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <record id="security_check_group_manager" model="res.groups">
+            <field name="name">Security Check / Manager</field>
+        </record>
+    </data>
+</odoo>

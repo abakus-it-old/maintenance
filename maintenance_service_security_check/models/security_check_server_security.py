@@ -5,6 +5,7 @@ from openerp import models, fields, api, exceptions, _
 import logging
 _logger = logging.getLogger(__name__)
 
+
 class ServerSecurity(models.Model):
     _name = 'security.check.server.security'
 
