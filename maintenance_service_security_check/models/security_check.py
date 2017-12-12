@@ -75,6 +75,20 @@ class SecurityCheck(models.Model):
         self.state = 'draft'
 
     @api.multi
+    def action_duplicate(self):
+        for check in self:
+            new_check_id = check.copy(default={'partner_id': check.partner_id.id, 'state': 'draft'})
+            return {
+                'type': 'ir.actions.act_window',
+                'view_type': 'form',
+                'res_model': 'security.check',
+                'view_mode': 'form',
+                'res_id': new_check_id.id,
+                'target': 'current',
+            }
+        
+
+    @api.multi
     @api.depends('partner_id', 'date_end')
     def _compute_name(self):
         for check in self:
