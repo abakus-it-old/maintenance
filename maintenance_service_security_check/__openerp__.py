@@ -2,7 +2,8 @@
     'name': "Security Check",
     'version': '9.0.1.0',
     'depends': [
-        'base'
+        'base',
+        'mail',
     ],
     'author': "Jason PINDAT @ AbAKUS it-solutions SARL",
     'website': "http://www.abakusitsolutions.eu",
