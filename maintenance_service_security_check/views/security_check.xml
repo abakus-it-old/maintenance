@@ -74,7 +74,7 @@
                                 </tree>
                             </field>
                         </group>
-                        <group string="Gate Accesses">
+                        <group string="Portal Accesses">
                             <group colspan="4" col="5">
                                 <button string="Create Report" class="btn-primary" type="object" name="print_gate_access" colspan="1" />
                                 <field name="gate_access_attachment_ids" widget="many2many_binary" nolabel="1" colspan="1" />
