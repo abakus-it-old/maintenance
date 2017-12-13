@@ -21,7 +21,7 @@
                             <group>
                                 <field name="name" readonly="1" />
                                 <field name="write_uid" readonly="1" />
-                                <field name="partner_id" />
+                                <field name="partner_id" domain="[('parent_id', '=', False), ('customer', '=', True)]" />
                             </group>
                             <group>
                                 <field name="create_date" readonly="1" />
