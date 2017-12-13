@@ -21,6 +21,9 @@ class SecurityCheck(models.Model):
     ], string='State', default='draft', required=True, track_visibility='always')
     date_end = fields.Date(string='End Date', required=True, readonly=True, states={'draft': [('readonly', False)]})
     partner_id = fields.Many2one('res.partner', string='Customer', required=True, readonly=True, states={'draft': [('readonly', False)]})
+    subscription_id = fields.Many2one('sale.subscription', string='Contract', readonly=True, states={'draft': [('readonly', False)]})
+    analytic_account_id = fields.Many2one(string="Account", related='subscription_id.analytic_account_id')
+    timesheet_line_ids = fields.One2many('account.analytic.line', 'security_check_id', string="Timesheet lines", )
 
     external_access_ids = fields.One2many('security.check.external.access', 'check_id', string="External Accesses", readonly=True, states={'open': [('readonly', False)]})
     external_access_attachment_ids = fields.Many2many('ir.attachment', 'ea_attachment_id', string='Signed Report')
