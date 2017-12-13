@@ -4,6 +4,8 @@
     'depends': [
         'base',
         'mail',
+        'sale_contract',
+        'contract_timesheet_activities_on_site_management',
     ],
     'author': "Jason PINDAT @ AbAKUS it-solutions SARL",
     'website': "http://www.abakusitsolutions.eu",
@@ -18,8 +20,11 @@
     'data': [
         'views/menu_buttons.xml',
         'views/security_check.xml',
+        'views/sale_subscription.xml',
+
         'security/security_check_security.xml',
         'security/ir.model.access.csv',
+
         'report/layouts.xml',
         'report/external_access_template.xml',
         'report/backups_template.xml',
