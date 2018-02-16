@@ -95,7 +95,7 @@ class SecurityCheck(models.Model):
     @api.depends('partner_id', 'date_end')
     def _compute_name(self):
         for check in self:
-            check.name = "SC - " + str(check.partner_id.name) + " - " + str(check.date_end)
+            check.name ="SC - %s - %s" % (check.partner_id.name, check.date_end)
 
     @api.multi
     def print_external_access(self):
