@@ -152,6 +152,7 @@
                                         <field name="on_site" />
                                         <field name="to_invoice" />
                                         <field name="account_id"/>
+                                        <field name="is_timesheet" invisible="1"/>
                                         <field name="unit_amount" string="Duration" sum="Total time" widget="float_time"/>
                                     </tree>
                                 </field> 
