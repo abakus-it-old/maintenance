@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <template id="external_access_document">
+        <template id="network_security_document">
 
             <t t-set="doc" t-value="doc.with_context({'lang':user.partner_id.lang})" />
 
@@ -9,59 +9,57 @@
                 <div class="page">
                     <div class="oe_structure" />
 
-                    <div>
-                        <tr>
-                            <td>Author:</td>
-                            <td><span t-field="doc.write_uid" /></td>
-                        </tr>
-                    </div>
-                    <div>
-                        <td>Creation date:</td>
-                        <td><span t-field="doc.create_date" /></td>
-                    </div>
-                    <div>
-                        <td>Expiration date:</td>
-                        <td><span t-field="doc.date_end" /></td>
-                    </div>
-                    <div>
-                        <td>State:</td>
-                        <td><span t-field="doc.state" /></td>
-                    </div>
-                    <div>
-                        <td>Client:</td>
-                        <td><span t-field="doc.partner_id" /></td>
-                    </div>
+                    <t t-call="maintenance_service_security_check.security_check_layout_user" />
 
-                    <table style="width:100%; font-size:0.8em; margin-bottom:2em;">
-
+                    <table style="width:100%; font-size:0.8em; margin-bottom:2em; margin-top: 2em;">
                         <tr>
-                            <th>User Name</th>
-                            <th>First Name</th>
-                            <th>Last name</th>
-                            <th>Connection Mode</th>
+                            <th>Firewall</th>
+                            <th>Firewall License OK</th>
+                            <th>Firewall Rules OK</th>
+                            <th>WLAN</th>
+                            <th>Complex Passwords</th>
                         </tr>
 
-                        <tr t-foreach="doc.external_access_ids" t-as="line">
+                        <tr t-foreach="doc.network_security_ids" t-as="line">
                             <td>
-                                <span t-field="line.username" />
+                                <span t-field="line.firewall" />
                             </td>
                             <td>
-                                <span t-field="line.first_name" />
+                                <span t-field="line.firewall_licences_ok" />
                             </td>
                             <td>
-                                <span t-field="line.last_name" />
+                                <span t-field="line.firewall_rules_ok" />
                             </td>
                             <td>
-                                <span t-field="line.connection_mode" />
+                                <span t-field="line.wlan" />
+                            </td>
+                            <td>
+                                <span t-field="line.complex_passwords" />
                             </td>
                         </tr>
                     </table>
 
-                    <div>
-                        <td>Validation Date:</td>
-                        <td>Signature:</td>
-                    </div>
+                    <table style="width:100%;" >
+                        <tr>
+                            <td>
+                                <div>Comment: </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div contenteditable="true">
+                                    <span t-field="doc.network_security_free_text"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
 
+                    <table style="width:100%; margin-top:2em;">
+                            <tr>
+                                <td style="width:50%; text-align: left;">Validation Date:</td>
+                                <td style="width:50%; text-align: left;">Signature:</td>
+                            </tr>
+                    </table>
 
                     <div class="oe_structure"/>
                 </div>
@@ -69,10 +67,10 @@
         </template>
 
 
-        <template id="report_external_access_template">
+        <template id="report_network_security_template">
             <t t-call="report.html_container">
                 <t t-foreach="docs" t-as="doc">
-                    <t t-call="maintenance_service_security_check.external_access_document" t-lang="user.partner_id.lang"/>
+                    <t t-call="maintenance_service_security_check.network_security_document" t-lang="user.partner_id.lang"/>
                 </t>
             </t>
         </template>

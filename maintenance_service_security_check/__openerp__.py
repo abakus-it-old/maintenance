@@ -7,15 +7,11 @@
         'sale_contract',
         'contract_timesheet_activities_on_site_management',
     ],
-    'author': "Jason PINDAT @ AbAKUS it-solutions SARL",
+    'author': "AbAKUS it-solutions SARL",
     'website': "http://www.abakusitsolutions.eu",
     'category': 'Other',
     'description': """
-        Security Check
 
-        Adds a security checklist system
-
-        This module has been developed by Jason PINDAT @ AbAKUS it-solutions.
     """,
     'data': [
         'views/menu_buttons.xml',

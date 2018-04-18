@@ -47,6 +47,7 @@
                                             <field name="connection_mode" />
                                         </tree>
                                     </field>
+                                    <field name="external_access_free_text" />
                                 </group>
                                 <group string="Backups">
                                     <group colspan="4" col="5">>
@@ -63,6 +64,7 @@
                                             <field name="report_monitoring" />
                                         </tree>
                                     </field>
+                                    <field name="backups_free_text" />
                                 </group>
                                 <group string="Access Rights">
                                     <group colspan="4" col="4">
@@ -78,6 +80,7 @@
                                             <field name="rights" />
                                         </tree>
                                     </field>
+                                    <field name="access_rights_free_text" />
                                 </group>
                                 <group string="Portal Accesses">
                                     <group colspan="4" col="5">
@@ -94,10 +97,11 @@
                                             <field name="date_first_connection" />
                                         </tree>
                                     </field>
+                                    <field name="gate_access_free_text" />
                                 </group>
                                 <group string="Servers Security">
                                     <group colspan="4" col="6">
-                                        <button string="Create Report" class="btn-primary" type="object" name="print_server_security" colspan="1" />
+                                        <button string="Create Report" class="btn-primary" type="object" name="print_servers_security" colspan="1" />
                                         <field name="server_security_attachment_ids" widget="many2many_binary"  nolabel="1" colspan="1" />
                                         <field name="server_security_check_date" />
                                     </group>
@@ -112,6 +116,7 @@
                                             <field name="monitoring_probes" />
                                         </tree>
                                     </field>
+                                    <field name="server_security_free_text" />
                                 </group>
                                 <group string="Network Security">
                                     <group colspan="4" col="5">
@@ -128,10 +133,11 @@
                                             <field name="complex_passwords" />
                                         </tree>
                                     </field>
+                                    <field name="network_security_free_text" />
                                 </group>
                                 <group string="Workstations Security">
-                                    <group colspan="4" col="2">
-                                        <button string="Create Report" class="btn-primary" type="object" name="print_workstation_security" colspan="1" />
+                                    <group colspan="4" col="5">
+                                        <button string="Create Report" class="btn-primary" type="object" name="print_workstations_security" colspan="1" />
                                         <field name="workstation_security_attachment_ids" widget="many2many_binary"  nolabel="1" colspan="1" />
                                         <field name="workstation_security_check_date" />
                                     </group>
@@ -141,6 +147,7 @@
                                             <field name="antivirus_ok" />
                                         </tree>
                                     </field>
+                                    <field name="workstation_security_free_text" />
                                 </group>
                             </page>
                             <page string="Timesheets">
