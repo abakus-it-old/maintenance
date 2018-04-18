@@ -6,6 +6,8 @@
         'mail',
         'sale_contract',
         'contract_timesheet_activities_on_site_management',
+        'hr_analytic_timesheet_improvements',
+        'account_analytic_account_improvements',
     ],
     'author': "AbAKUS it-solutions SARL",
     'website': "http://www.abakusitsolutions.eu",
