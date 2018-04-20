@@ -33,6 +33,48 @@
             </div>
         </template>
 
+        <template id="security_check_layout_user">
+            <div class="security_check_layout_user">
+                <table>
+                    <tr>
+                        <td>
+                            <div>Author:
+                                <span t-field="doc.write_uid"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Creation date:
+                                <span t-field="doc.create_date"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Expiration date:
+                                <span t-field="doc.date_end"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>State:
+                                <span t-field="doc.state"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Client:
+                                <span t-field="doc.partner_id"/>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </template>
+
         <template id="security_check_layout_footer">
             <div class="footer">
                 <div class="text-center" style="border-top: 1px solid black;">

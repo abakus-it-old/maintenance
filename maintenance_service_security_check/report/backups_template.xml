@@ -3,37 +3,15 @@
     <data>
         <template id="backups_document">
 
-            <t t-set="doc" t-value="doc.with_context({'lang':user.partner_id.lang})" />
+            <t t-set="doc" t-value="doc.with_context({'lang':user.partner_id.lang})"/>
 
             <t t-call="maintenance_service_security_check.security_check_layout">
                 <div class="page">
                     <div class="oe_structure" />
 
-                    <div>
-                        <tr>
-                            <td>Author:</td>
-                            <td><span t-field="doc.write_uid" /></td>
-                        </tr>
-                    </div>
-                    <div>
-                        <td>Creation date:</td>
-                        <td><span t-field="doc.create_date" /></td>
-                    </div>
-                    <div>
-                        <td>Expiration date:</td>
-                        <td><span t-field="doc.date_end" /></td>
-                    </div>
-                    <div>
-                        <td>State:</td>
-                        <td><span t-field="doc.state" /></td>
-                    </div>
-                    <div>
-                        <td>Client:</td>
-                        <td><span t-field="doc.partner_id" /></td>
-                    </div>
+                    <t t-call="maintenance_service_security_check.security_check_layout_user" />
 
-                    <table style="width:100%; font-size:0.8em; margin-bottom:2em;">
-
+                    <table style="width:100%; font-size:0.8em; margin-bottom:2em; margin-top:2em;">
                         <tr>
                             <th>Source</th>
                             <th>Destination</th>
@@ -61,11 +39,27 @@
                         </tr>
                     </table>
 
-                    <div>
-                        <td>Validation Date:</td>
-                        <td>Signature:</td>
-                    </div>
+                    <table style="width:100%;" >
+                        <tr>
+                            <td>
+                                <div>Comment: </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div contenteditable="true">
+                                    <span t-field="doc.backups_free_text"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
 
+                    <table style="width:100%; margin-top:2em;">
+                            <tr>
+                                <td style="width:50%; text-align: left;">Validation Date:</td>
+                                <td style="width:50%; text-align: left;">Signature:</td>
+                            </tr>
+                    </table>
 
                     <div class="oe_structure"/>
                 </div>
