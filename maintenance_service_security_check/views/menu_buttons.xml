@@ -9,8 +9,25 @@
         </record>
 
         <menuitem name="Security Checks"
-            id="menu_security_checks_root"
-            action="action_security_checks" />
+                  id="menu_security_checks_root"
+                  action="action_security_checks"/>
+
+        <!-- Config -->
+        <menuitem id="menuitem_security_check_configuration"
+                  name="Configuration"
+                  parent="menu_security_checks_root"/>
+
+        <record id="action_config_connection_mode"
+                model="ir.actions.act_window">
+            <field name="name">Connection Mode</field>
+            <field name="res_model">connection.mode</field>
+            <field name="view_id" ref="config_connection_mode_tree"/>
+        </record>
+
+        <menuitem id="menuitem_config_connection_mode"
+                  name="Connection Mode"
+                  action="action_config_connection_mode"
+                  parent="menuitem_security_check_configuration"/>
 
         <!-- <record id="action_reservation" model="ir.actions.act_window">
             <field name="name">Reservations</field>

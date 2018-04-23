@@ -10,3 +10,4 @@ from . import security_check_server_security
 from . import security_check_workstation_security
 from . import account_analytic_line
 from . import sale_subscription
+from . import connection_mode

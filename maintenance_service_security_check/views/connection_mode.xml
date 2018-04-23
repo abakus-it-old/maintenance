@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Tree view for connection mode -->
+        <record id="config_connection_mode_tree" model="ir.ui.view">
+            <field name="name">security.check.connection.mode.tree</field>
+            <field name="model">connection.mode</field>
+            <field name="arch" type="xml">
+                <tree string="Connection Mode Tree">
+                    <field name="name"/>
+                    <field name="active"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Form view -->
+        <record id="config_connection_mode_form" model="ir.ui.view">
+            <field name="name">security.check.connection.mode.form</field>
+            <field name="model">connection.mode</field>
+            <field name="arch" type="xml">
+                <form string="Connection Mode Form" class="o_packaging_type">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="active"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

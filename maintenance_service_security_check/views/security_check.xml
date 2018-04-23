@@ -44,7 +44,8 @@
                                             <field name="username" />
                                             <field name="first_name" />
                                             <field name="last_name" />
-                                            <field name="connection_mode" />
+                                            <field name="connection_mode_ids" widget="many2many_tags" />
+                                            <field name="comment" />
                                         </tree>
                                     </field>
                                     <field name="external_access_free_text" />

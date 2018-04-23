@@ -12,4 +12,5 @@ class ExternalAccess(models.Model):
     username = fields.Char(string='User Name', required=True)
     first_name = fields.Char(required=True)
     last_name = fields.Char(required=True)
-    connection_mode = fields.Char(required=True)
+    connection_mode_ids = fields.Many2many('connection.mode', string="Connection Mode")
+    comment = fields.Char()

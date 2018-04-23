@@ -16,6 +16,7 @@
 
     """,
     'data': [
+        'views/connection_mode.xml',
         'views/menu_buttons.xml',
         'views/security_check.xml',
         'views/sale_subscription.xml',

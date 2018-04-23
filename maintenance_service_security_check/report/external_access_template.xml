@@ -17,6 +17,7 @@
                             <th>First Name</th>
                             <th>Last name</th>
                             <th>Connection Mode</th>
+                            <th>Comment</th>
                         </tr>
 
                         <tr t-foreach="doc.external_access_ids" t-as="line">
@@ -30,7 +31,12 @@
                                 <span t-field="line.last_name"/>
                             </td>
                             <td>
-                                <span t-field="line.connection_mode"/>
+                                <t t-foreach="line.connection_mode_ids" t-as="cmode">
+                                    <span t-field="cmode.name"/>,
+                                </t>
+                            </td>
+                            <td>
+                                <span t-field="line.comment"/>
                             </td>
                         </tr>
                     </table>
