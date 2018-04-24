@@ -41,9 +41,8 @@
                                     </group>
                                     <field name="external_access_ids" nolabel="1" colspan="4">
                                         <tree editable="bottom">
-                                            <field name="username" />
-                                            <field name="first_name" />
-                                            <field name="last_name" />
+                                            <field name="partner_id" />
+                                            <!--field name="username" /-->
                                             <field name="connection_mode_ids" widget="many2many_tags" />
                                             <field name="comment" />
                                         </tree>

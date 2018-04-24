@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+# from . import res_partner
 from . import security_check
 from . import security_check_access_rights
 from . import security_check_backup

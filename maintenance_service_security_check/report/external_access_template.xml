@@ -13,22 +13,18 @@
 
                     <table style="width:100%; font-size:0.8em; margin-bottom:2em; margin-top:2em;">
                         <tr>
-                            <th>User Name</th>
-                            <th>First Name</th>
-                            <th>Last name</th>
+                            <th>User</th>
+                            <th>Username</th>
                             <th>Connection Mode</th>
                             <th>Comment</th>
                         </tr>
 
                         <tr t-foreach="doc.external_access_ids" t-as="line">
                             <td>
-                                <span t-field="line.username"/>
+                                <span t-field="line.partner_id.name"/>
                             </td>
                             <td>
-                                <span t-field="line.first_name"/>
-                            </td>
-                            <td>
-                                <span t-field="line.last_name"/>
+                                <!--span t-field="line.username"/-->
                             </td>
                             <td>
                                 <t t-foreach="line.connection_mode_ids" t-as="cmode">
