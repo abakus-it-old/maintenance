@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-# (c) 2018 AbAeKUS IT SOLUTION
+# (c) 2018 AbAKUS IT SOLUTION
 
 from openerp import models, fields, api
 
