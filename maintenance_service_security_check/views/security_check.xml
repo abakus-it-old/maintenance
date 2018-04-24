@@ -85,7 +85,7 @@
                                 <group string="Portal Accesses">
                                     <group colspan="4" col="5">
                                         <button string="Create Report" class="btn-primary" type="object" name="print_gate_access" colspan="1" />
-                                        <button string="Import Users" class="btn-primary" type="object" name="import_gate_access_users" colspan="1" />
+                                        <button string="Auto Fill Users" class="btn-primary" type="object" name="import_gate_access_users" colspan="1" />
                                         <field name="gate_access_attachment_ids" widget="many2many_binary" nolabel="1" colspan="1" />
                                         <field name="gate_access_check_date" />
                                     </group>
