@@ -14,7 +14,7 @@
                     <table style="width:100%; font-size:0.8em; margin-bottom:2em; margin-top:2em;">
                         <tr>
                             <th>User</th>
-                            <th>Username</th>
+                            <th>Login</th>
                             <th>Connection Mode</th>
                             <th>Comment</th>
                         </tr>
@@ -24,7 +24,7 @@
                                 <span t-field="line.partner_id.name"/>
                             </td>
                             <td>
-                                <!--span t-field="line.username"/-->
+                                <span t-field="line.username"/>
                             </td>
                             <td>
                                 <t t-foreach="line.connection_mode_ids" t-as="cmode">

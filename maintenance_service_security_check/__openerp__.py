@@ -12,10 +12,8 @@
     'author': "AbAKUS it-solutions SARL",
     'website': "http://www.abakusitsolutions.eu",
     'category': 'Other',
-    'description': """
-
-    """,
     'data': [
+        'views/res_partner.xml',
         'views/connection_mode.xml',
         'views/menu_buttons.xml',
         'views/security_check.xml',
