@@ -9,7 +9,7 @@ class ExternalAccess(models.Model):
     _name = 'security.check.external.access'
 
     check_id = fields.Many2one('security.check', string='Security Check', required=True)
-    username = fields.Char(string='User Name', required=True)
-    first_name = fields.Char(required=True)
-    last_name = fields.Char(required=True)
-    connection_mode = fields.Char(required=True)
+    partner_id = fields.Many2one('res.partner', string="User", required=True)
+    username = fields.Char(related='partner_id.username', string='Login', readonly=True)
+    connection_mode_ids = fields.Many2many('connection.mode', string="Connection Mode")
+    comment = fields.Char()

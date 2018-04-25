@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <record id="view_res_partner_security_check_inherit" model="ir.ui.view">
+        <field name="name">res.partner.security.check.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="username" />
+            </xpath>
+        </field>
+    </record>
+    </data>
+</openerp>

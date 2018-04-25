@@ -41,10 +41,10 @@
                                     </group>
                                     <field name="external_access_ids" nolabel="1" colspan="4">
                                         <tree editable="bottom">
+                                            <field name="partner_id" domain="[('is_company', '=', False)]" />
                                             <field name="username" />
-                                            <field name="first_name" />
-                                            <field name="last_name" />
-                                            <field name="connection_mode" />
+                                            <field name="connection_mode_ids" widget="many2many_tags" domain="[('active', '=', True)]"/>
+                                            <field name="comment" />
                                         </tree>
                                     </field>
                                     <field name="external_access_free_text" />
@@ -85,6 +85,7 @@
                                 <group string="Portal Accesses">
                                     <group colspan="4" col="5">
                                         <button string="Create Report" class="btn-primary" type="object" name="print_gate_access" colspan="1" />
+                                        <button string="Auto Fill Users" class="btn-primary" type="object" name="import_gate_access_users" colspan="1" />
                                         <field name="gate_access_attachment_ids" widget="many2many_binary" nolabel="1" colspan="1" />
                                         <field name="gate_access_check_date" />
                                     </group>

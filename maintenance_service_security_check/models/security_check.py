@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import logging
-from openerp import models, fields, api, exceptions, _
+from openerp import models, fields, api, _
+from openerp.exceptions import ValidationError
 _logger = logging.getLogger(__name__)
 
 
@@ -142,3 +143,32 @@ class SecurityCheck(models.Model):
     def print_workstations_security(self):
         return self.env['report'].get_action(self,
                                              'maintenance_service_security_check.report_workstations_security_template')
+
+    @api.multi
+    def import_gate_access_users(self):
+        # is company set ?
+        if not self.partner_id:
+            return ValidationError(_("Please set a Customer first"))
+
+        if len(self.gate_access_ids) > 0:
+            return ValidationError(_("Please empty user list first"))
+
+        # get all company contacts, filter by in_portal
+        users = self.env['res.users'].search([
+            '|',
+            ('partner_id.parent_id', '=', self.partner_id.id),
+            ('partner_id', '=', self.partner_id.id)
+        ])
+
+        for user in users:
+            # look for associated user
+            #user = self.env['res.users'].search([('partner_id', '=', partner.id)])
+            self.gate_access_ids.create({
+                'check_id': self.id,
+                'username': user.partner_id.name,
+                'sales_ku': user.partner_id.keyuser_sales,
+                'accounting_ku': user.partner_id.keyuser_accounting,
+                'project_ku': user.partner_id.keyuser_project,
+                'date_first_connection': user.login_date or _('never connected'),
+            })
+        return

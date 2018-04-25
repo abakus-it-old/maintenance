@@ -9,41 +9,31 @@
         </record>
 
         <menuitem name="Security Checks"
-            id="menu_security_checks_root"
-            action="action_security_checks" />
+                  id="menu_security_checks_root"
+                  action="action_security_checks"
+                  sequence="5" />
 
-        <!-- <record id="action_reservation" model="ir.actions.act_window">
-            <field name="name">Reservations</field>
-            <field name="res_model">fleet.reservation</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">calendar,tree,form</field>
+        <!-- Config -->
+        <menuitem id="menuitem_security_check_configuration"
+                  name="Configuration"
+                  parent="menu_security_checks_root"
+                  sequence="25" />
+
+        <record id="action_config_connection_mode"
+                model="ir.actions.act_window">
+            <field name="name">Connection Modes</field>
+            <field name="res_model">connection.mode</field>
+            <field name="view_id" ref="config_connection_mode_tree"/>
         </record>
 
-        <menuitem name="Reservations"
-            id="menu_reservation" parent="menu_reservation_root"
-            sequence="5" action="action_reservation" />
+        <menuitem id="menuitem_security_check"
+                  name="Checks"
+                  action="action_security_checks"
+                  parent="menu_security_checks_root"/>
 
-        <record id="action_reservation_type" model="ir.actions.act_window">
-            <field name="name">Reservation Types</field>
-            <field name="res_model">fleet.reservation.type</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <menuitem name="Reservation Types"
-            id="menu_reservation_type" parent="menu_reservation_root"
-            sequence="20" action="action_reservation_type" />
-
-        <record id="action_reservation_wizard" model="ir.actions.act_window">
-            <field name="name">Reservation Generator</field>
-            <field name="res_model">fleet.reservation.wizard</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">form</field>
-            <field name="target">new</field>
-        </record>
-
-        <menuitem name="Reservation Generator"
-            id="menu_reservation_wizard" parent="menu_reservation_root"
-            sequence="50" action="action_reservation_wizard" /> -->
+        <menuitem id="menuitem_config_connection_mode"
+                  name="Connection Modes"
+                  action="action_config_connection_mode"
+                  parent="menuitem_security_check_configuration"/>
     </data>
 </openerp>
