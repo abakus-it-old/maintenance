@@ -154,20 +154,21 @@ class SecurityCheck(models.Model):
             return ValidationError(_("Please empty user list first"))
 
         # get all company contacts, filter by in_portal
-        partners = self.env['res.partner'].search([('company_id', '=', self.partner_id.company_id.id),
-                                                   ('is_company', '=', False),
-                                                   '|', '|', ('keyuser_accounting', '=', True),
-                                                   ('keyuser_sales', '=', True),
-                                                   ('keyuser_project', '=', True)])
-        for partner in partners:
+        users = self.env['res.users'].search([
+            '|',
+            ('partner_id.parent_id', '=', self.partner_id.id),
+            ('partner_id', '=', self.partner_id.id)
+        ])
+
+        for user in users:
             # look for associated user
-            user = self.env['res.users'].search([('partner_id', '=', partner.id)])
+            #user = self.env['res.users'].search([('partner_id', '=', partner.id)])
             self.gate_access_ids.create({
                 'check_id': self.id,
-                'username': partner.name,
-                'sales_ku': partner.keyuser_sales,
-                'accounting_ku': partner.keyuser_accounting,
-                'project_ku': partner.keyuser_project,
+                'username': user.partner_id.name,
+                'sales_ku': user.partner_id.keyuser_sales,
+                'accounting_ku': user.partner_id.keyuser_accounting,
+                'project_ku': user.partner_id.keyuser_project,
                 'date_first_connection': user.login_date or _('never connected'),
             })
         return
