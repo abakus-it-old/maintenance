@@ -96,7 +96,7 @@
                                             <field name="sales_ku" />
                                             <field name="accounting_ku" />
                                             <field name="project_ku" />
-                                            <field name="date_first_connection" />
+                                            <field name="date_last_connection" />
                                         </tree>
                                     </field>
                                     <field name="gate_access_free_text" />

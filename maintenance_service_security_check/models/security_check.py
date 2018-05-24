@@ -169,6 +169,6 @@ class SecurityCheck(models.Model):
                 'sales_ku': user.partner_id.keyuser_sales,
                 'accounting_ku': user.partner_id.keyuser_accounting,
                 'project_ku': user.partner_id.keyuser_project,
-                'date_first_connection': user.login_date or _('never connected'),
+                'date_last_connection': user.login_date or _('never connected'),
             })
         return

@@ -17,7 +17,7 @@
                             <th>Sales KU</th>
                             <th>Accounting KU</th>
                             <th>Project KU</th>
-                            <th>Date First Connection</th>
+                            <th>Last Connection</th>
                             <th></th>
                         </tr>
 
@@ -35,7 +35,7 @@
                                 <span t-field="line.project_ku" />
                             </td>
                             <td>
-                                <span t-field="line.date_first_connection" />
+                                <span t-field="line.date_last_connection" />
                             </td>
                         </tr>
                     </table>

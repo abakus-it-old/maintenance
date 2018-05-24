@@ -13,4 +13,4 @@ class GateAccess(models.Model):
     sales_ku = fields.Boolean(string='Sales KU')
     accounting_ku = fields.Boolean(string='Accounting KU')
     project_ku = fields.Boolean(string='Project KU')
-    date_first_connection = fields.Char(string='First Connection', default="never connected")
+    date_last_connection = fields.Char(string='Last Connection', default="never connected")
