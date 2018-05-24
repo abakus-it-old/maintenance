@@ -32,6 +32,7 @@
         'report/servers_security_template.xml',
         'report/network_security_template.xml',
         'report/workstations_security_template.xml',
+        'report/complete_report_template.xml',
         'report/reports.xml',
     ],
     'application': True

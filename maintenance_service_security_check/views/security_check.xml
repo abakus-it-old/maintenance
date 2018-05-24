@@ -15,6 +15,7 @@
                         <button name="action_cancel" string="Cancel" type="object" states="draft,open,waiting,closed"/>
                         <button name="action_redraft" states="cancel" string="Reset as draft" type="object" />
                         <button name="action_duplicate" states="closed" class="oe_highlight" string="Create a new one for the customer" type="object" />
+                        <button name="action_print_complete" class="oe_highlight" string="Print" type="object" />
                         <field name="state" widget="statusbar" statusbar_visible="draft,open,waiting,closed" />
                     </header>
                     <sheet>

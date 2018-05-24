@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="security_check_report_complete_template">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="maintenance_service_security_check.external_access_document" t-lang="user.partner_id.lang"/>
+                    <t t-call="maintenance_service_security_check.backups_document" t-lang="user.partner_id.lang"/>
+                    <t t-call="maintenance_service_security_check.access_rights_document" t-lang="user.partner_id.lang"/>
+                    <t t-call="maintenance_service_security_check.gate_access_document" t-lang="user.partner_id.lang"/>
+                    <t t-call="maintenance_service_security_check.servers_security_document" t-lang="user.partner_id.lang"/>
+                    <t t-call="maintenance_service_security_check.network_security_document" t-lang="user.partner_id.lang"/>
+                    <t t-call="maintenance_service_security_check.workstations_security_document" t-lang="user.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

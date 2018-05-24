@@ -172,3 +172,8 @@ class SecurityCheck(models.Model):
                 'date_last_connection': user.login_date or _('never connected'),
             })
         return
+
+    @api.multi
+    def action_print_complete(self):
+        return self.env['report'].get_action(self,
+                                             'maintenance_service_security_check.security_check_report_complete_template')

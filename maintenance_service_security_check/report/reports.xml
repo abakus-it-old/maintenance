@@ -57,5 +57,14 @@
                 file="maintenance_service_security_check.report_workstations_security"
                 name="maintenance_service_security_check.report_workstations_security_template"
         />
+
+        <report
+                id="report_security_check_complete"
+                string="Security Check Complete Report"
+                model="security.check"
+                report_type="qweb-pdf"
+                file="maintenance_service_security_check.security_check_report_complete"
+                name="maintenance_service_security_check.security_check_report_complete_template"
+        />
     </data>
 </odoo>
