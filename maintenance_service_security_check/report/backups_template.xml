@@ -15,6 +15,7 @@
                         <tr>
                             <th>Source</th>
                             <th>Destination</th>
+                            <th>Type</th>
                             <th>Frequency</th>
                             <th>Date Last Successful Restore</th>
                             <th>Report Monitoring</th>
@@ -26,6 +27,9 @@
                             </td>
                             <td>
                                 <span t-field="line.destination" />
+                            </td>
+                            <td>
+                                <span t-field="line.type_id" />
                             </td>
                             <td>
                                 <span t-field="line.frequency" />
