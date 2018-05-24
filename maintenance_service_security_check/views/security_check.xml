@@ -42,7 +42,7 @@
                                     </group>
                                     <field name="external_access_ids" nolabel="1" colspan="4">
                                         <tree editable="bottom">
-                                            <field name="partner_id" domain="[('parent_id', '=', parent.partner_id)]" />
+                                            <field name="partner_id" />
                                             <field name="username" />
                                             <field name="connection_mode_ids" widget="many2many_tags" domain="[('active', '=', True)]"/>
                                             <field name="comment" />
