@@ -10,5 +10,5 @@ class ConfigConnectionMode(models.Model):
     _order = 'name'
 
     name = fields.Char()
-    active = fields.Boolean()
+    active = fields.Boolean(default=True)
     description = fields.Char()
