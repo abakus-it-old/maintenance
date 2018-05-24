@@ -41,7 +41,7 @@
                                     </group>
                                     <field name="external_access_ids" nolabel="1" colspan="4">
                                         <tree editable="bottom">
-                                            <field name="partner_id" domain="[('is_company', '=', False)]" />
+                                            <field name="partner_id" domain="[('parent_id', '=', parent.partner_id)]" />
                                             <field name="username" />
                                             <field name="connection_mode_ids" widget="many2many_tags" domain="[('active', '=', True)]"/>
                                             <field name="comment" />
@@ -58,6 +58,7 @@
                                     <field name="backups_ids" nolabel="1" colspan="4">
                                         <tree editable="bottom">
                                             <field name="source" />
+                                            <field name="type_id" />
                                             <field name="destination" />
                                             <field name="frequency" />
                                             <field name="date_last_successful_restore" />

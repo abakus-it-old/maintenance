@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
+        <!-- Main Menuitem -->
+        <menuitem name="Security Checks"
+                  id="menu_security_checks_root"
+                  action="action_security_checks"
+                  sequence="5" />
+
+        <!-- Checks : action + menuitem -->
         <record id="action_security_checks" model="ir.actions.act_window">
             <field name="name">Security Checks</field>
             <field name="res_model">security.check</field>
@@ -8,9 +15,10 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem name="Security Checks"
-                  id="menu_security_checks_root"
+        <menuitem id="menuitem_security_check"
+                  name="Checks"
                   action="action_security_checks"
+                  parent="menu_security_checks_root"
                   sequence="5" />
 
         <!-- Config -->
@@ -19,21 +27,29 @@
                   parent="menu_security_checks_root"
                   sequence="25" />
 
-        <record id="action_config_connection_mode"
-                model="ir.actions.act_window">
+        <!-- Config : actions + submenuitems -->
+        <record id="action_config_connection_mode" model="ir.actions.act_window">
             <field name="name">Connection Modes</field>
             <field name="res_model">connection.mode</field>
             <field name="view_id" ref="config_connection_mode_tree"/>
         </record>
 
-        <menuitem id="menuitem_security_check"
-                  name="Checks"
-                  action="action_security_checks"
-                  parent="menu_security_checks_root"/>
+        <record id="action_config_backup_type" model="ir.actions.act_window">
+            <field name="name">Backup Types</field>
+            <field name="res_model">backup.type</field>
+            <field name="view_id" ref="config_backup_type_tree"/>
+        </record>
 
         <menuitem id="menuitem_config_connection_mode"
                   name="Connection Modes"
                   action="action_config_connection_mode"
-                  parent="menuitem_security_check_configuration"/>
+                  parent="menuitem_security_check_configuration"
+                  sequence="5" />
+
+        <menuitem id="menuitem_config_backup_type"
+                  name="Backup Types"
+                  action="action_config_backup_type"
+                  parent="menuitem_security_check_configuration"
+                  sequence="10" />
     </data>
 </openerp>

@@ -10,6 +10,6 @@ class ExternalAccess(models.Model):
 
     check_id = fields.Many2one('security.check', string='Security Check', required=True)
     partner_id = fields.Many2one('res.partner', string="User", required=True)
-    username = fields.Char(related='partner_id.username', string='Login', readonly=True)
+    username = fields.Char(related='partner_id.username', string='Login')
     connection_mode_ids = fields.Many2many('connection.mode', string="Connection Mode")
     comment = fields.Char()

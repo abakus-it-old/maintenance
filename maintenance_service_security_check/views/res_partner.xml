@@ -6,8 +6,12 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='email']" position="after">
-                <field name="username" />
+            <xpath expr="//notebook" position="inside">
+                <page name="maintenance" string="Maintenance">
+                    <group name="security_check">
+                        <field name="username" string="External access username"/>
+                    </group>
+                </page>
             </xpath>
         </field>
     </record>

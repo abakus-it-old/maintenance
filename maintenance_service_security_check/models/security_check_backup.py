@@ -14,3 +14,4 @@ class Backup(models.Model):
     frequency = fields.Char(required=True)
     date_last_successful_restore = fields.Date(string='Last Successful Restore', required=True)
     report_monitoring = fields.Char(required=True)
+    type_id = fields.Many2one('backup.type', string="Type", required=True)

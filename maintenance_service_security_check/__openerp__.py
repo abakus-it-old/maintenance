@@ -16,6 +16,7 @@
     'data': [
         'views/res_partner.xml',
         'views/connection_mode.xml',
+        'views/backup_type.xml',
         'views/menu_buttons.xml',
         'views/security_check.xml',
         'views/sale_subscription.xml',
