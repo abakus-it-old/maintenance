@@ -19,7 +19,7 @@ class SecurityCheck(models.Model):
         ('closed', 'Closed'),
         ('cancel', 'Cancelled'),
     ], default='draft', required=True, track_visibility='always')
-    date_end = fields.Date(string='End Date', required=True, readonly=True, states={'draft': [('readonly', False)]})
+    date_end = fields.Date(string='Planned End Date', track_visibility='always')
     partner_id = fields.Many2one('res.partner', string='Customer', required=True, readonly=True,
                                  states={'draft': [('readonly', False)]})
     subscription_id = fields.Many2one('sale.subscription', string='Contract', readonly=True,
