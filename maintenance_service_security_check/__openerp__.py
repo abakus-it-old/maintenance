@@ -2,7 +2,7 @@
     'name': "Security Check",
     'version': '9.0.1.0',
     'depends': [
-        'base',
+        'maintenance_service',
         'mail',
         'sale_contract',
         'contract_timesheet_activities_on_site_management',
@@ -35,5 +35,4 @@
         'report/complete_report_template.xml',
         'report/reports.xml',
     ],
-    'application': True
 }

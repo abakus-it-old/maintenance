@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!-- Main Menuitem -->
+        <menuitem name="Maintenance"
+                  id="menu_maintenance_service_root"
+                  sequence="5"
+                  web_icon="maintenance_service,static/description/menu.png" />
+
+        <!-- Config -->
+        <menuitem id="menuitem_maintenance_service_configuration"
+                  name="Configuration"
+                  parent="menu_maintenance_service_root"
+                  sequence="25" />
+    </data>
+</openerp>

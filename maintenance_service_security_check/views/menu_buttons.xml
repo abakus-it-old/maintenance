@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-        <!-- Main Menuitem -->
-        <menuitem name="Security Checks"
-                  id="menu_security_checks_root"
-                  action="action_security_checks"
-                  sequence="5"
-                  web_icon="maintenance_service_security_check,static/description/menu.png" />
-
         <!-- Checks : action + menuitem -->
         <record id="action_security_checks" model="ir.actions.act_window">
             <field name="name">Security Checks</field>
@@ -17,16 +10,10 @@
         </record>
 
         <menuitem id="menuitem_security_check"
-                  name="Checks"
+                  name="Security Checks"
                   action="action_security_checks"
-                  parent="menu_security_checks_root"
+                  parent="maintenance_service.menu_maintenance_service_root"
                   sequence="5" />
-
-        <!-- Config -->
-        <menuitem id="menuitem_security_check_configuration"
-                  name="Configuration"
-                  parent="menu_security_checks_root"
-                  sequence="25" />
 
         <!-- Config : actions + submenuitems -->
         <record id="action_config_connection_mode" model="ir.actions.act_window">
@@ -44,13 +31,13 @@
         <menuitem id="menuitem_config_connection_mode"
                   name="Connection Modes"
                   action="action_config_connection_mode"
-                  parent="menuitem_security_check_configuration"
+                  parent="maintenance_service.menuitem_maintenance_service_configuration"
                   sequence="5" />
 
         <menuitem id="menuitem_config_backup_type"
                   name="Backup Types"
                   action="action_config_backup_type"
-                  parent="menuitem_security_check_configuration"
+                  parent="maintenance_service.menuitem_maintenance_service_configuration"
                   sequence="10" />
     </data>
 </openerp>
