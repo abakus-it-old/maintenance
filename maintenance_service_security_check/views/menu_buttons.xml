@@ -5,7 +5,8 @@
         <menuitem name="Security Checks"
                   id="menu_security_checks_root"
                   action="action_security_checks"
-                  sequence="5" />
+                  sequence="5"
+                  web_icon="maintenance_service_security_check,static/description/menu.png" />
 
         <!-- Checks : action + menuitem -->
         <record id="action_security_checks" model="ir.actions.act_window">
