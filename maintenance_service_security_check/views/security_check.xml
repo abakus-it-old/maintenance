@@ -152,6 +152,23 @@
                                     </field>
                                     <field name="workstation_security_free_text" />
                                 </group>
+                                <group string="Todos">
+                                    <group colspan="4" col="5">
+                                        <button string="Create Report" class="btn-primary" type="object" name="print_todos_report" colspan="1" />
+                                        <field name="todos_attachment_ids" widget="many2many_binary"  nolabel="1" colspan="1" />
+                                        <field name="todos_date" />
+                                    </group>
+                                    <field name="todo_ids" nolabel="1" colspan="4">
+                                        <tree editable="bottom">
+                                            <field name="check_id" invisible="1"/>
+                                            <field name="name" />
+                                            <field name="description" />
+                                            <field name="issue_id" />
+                                            <field name="issue_state_id" readonly="True" />
+                                        </tree>
+                                    </field>
+                                    <field name="todos_free_text" />
+                                </group>
                             </page>
                             <page string="Timesheets">
                                 <field name="timesheet_line_ids" context="{'default_account_id' : analytic_account_id, 'default_is_timesheet' : 1}" >

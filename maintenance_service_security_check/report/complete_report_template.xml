@@ -11,6 +11,7 @@
                     <t t-call="maintenance_service_security_check.servers_security_document" t-lang="user.partner_id.lang"/>
                     <t t-call="maintenance_service_security_check.network_security_document" t-lang="user.partner_id.lang"/>
                     <t t-call="maintenance_service_security_check.workstations_security_document" t-lang="user.partner_id.lang"/>
+                    <t t-call="maintenance_service_security_check.todos_document" t-lang="user.partner_id.lang"/>
                 </t>
             </t>
         </template>

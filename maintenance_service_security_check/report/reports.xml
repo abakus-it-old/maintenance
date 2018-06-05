@@ -59,6 +59,15 @@
         />
 
         <report
+                id="report_todos"
+                string="Security Check Todos Report"
+                model="security.check"
+                report_type="qweb-pdf"
+                file="maintenance_service_security_check.report_todos"
+                name="maintenance_service_security_check.report_todos_template"
+        />
+
+        <report
                 id="report_security_check_complete"
                 string="Security Check Complete Report"
                 model="security.check"

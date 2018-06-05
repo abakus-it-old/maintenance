@@ -71,6 +71,11 @@ class SecurityCheck(models.Model):
     workstation_security_check_date = fields.Date(string='Check Date')
     workstation_security_free_text = fields.Text(string="Comments on Workstation Security")
 
+    todo_ids = fields.One2many('security.check.todo', 'check_id', string="Todos")
+    todos_attachment_ids = fields.Many2many('ir.attachment', 'ws_attachment_id', string='Signed Report')
+    todos_date = fields.Date(string='Date')
+    todos_free_text = fields.Text(string="Comments on Todos")
+
     @api.multi
     def action_confirm(self):
         self.state = 'open'
@@ -174,6 +179,10 @@ class SecurityCheck(models.Model):
             })
         return
 
+    @api.multi
+    def print_todos_report(self):
+        return self.env['report'].get_action(self,
+                                             'maintenance_service_security_check.report_todos_template')
     @api.multi
     def action_print_complete(self):
         return self.env['report'].get_action(self,
