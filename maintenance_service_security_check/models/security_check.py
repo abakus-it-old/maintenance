@@ -9,6 +9,7 @@ _logger = logging.getLogger(__name__)
 class SecurityCheck(models.Model):
     _name = 'security.check'
     _inherit = ['mail.thread']
+    _description = 'Security Check'
     _order = 'date_end'
 
     name = fields.Char(string='Titre', index=True, required=True, track_visibility='always', compute='_compute_name')
